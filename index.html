@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zellij Lab · Agence digitale au Maroc — Sites web, réseaux sociaux, publicité</title>
+<meta name="description" content="Zellij Lab conçoit des sites web, gère vos réseaux sociaux, lance vos publicités et vous rend visible sur Google. Agence digitale au Maroc, mise en ligne en 48h.">
+<meta name="theme-color" content="#07070B">
+<meta property="og:title" content="Zellij Lab · Agence digitale au Maroc">
+<meta property="og:description" content="Sites web, réseaux sociaux, publicité, SEO et branding pour les entreprises marocaines.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%2307070B'/><path d='M50 14l10 22 24-4-14 20 14 20-24-4-10 22-10-22-24 4 14-20-14-20 24 4z' fill='%23C6FF4D'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#07070B;--bg2:#0E0E15;--card:#111119;--ink:#F3F2EE;--muted:#9A99A6;--line:rgba(243,242,238,.1);--acc:#C6FF4D;--acc2:#7B5CFF;--acc3:#FF5C8A;--fd:'Syne',system-ui,sans-serif;--fb:'Inter Tight',system-ui,sans-serif;--fm:'JetBrains Mono',ui-monospace,monospace}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}
+html{overflow-x:clip}body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--fb);overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+::selection{background:var(--acc);color:#000}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--fd);font-weight:800;margin:0;line-height:.95;letter-spacing:-.035em}
+.mono{font:500 12px/1 var(--fm);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.motion .rv{opacity:0;transform:translateY(40px)}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.06em 0 .08em;margin:-.06em 0 -.08em}.w>span{display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:17px 26px;border-radius:999px;font:600 15px/1 var(--fb);border:1px solid var(--line);transition:transform .3s,background .3s,color .3s,border-color .3s;white-space:nowrap;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}.btn-a{background:var(--acc);color:#0A0A0A;border-color:var(--acc)}.btn-a:hover{background:#fff;border-color:#fff}
+.btn-g{background:rgba(255,255,255,.06);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}.btn-g:hover{border-color:var(--acc);color:var(--acc)}
+.btn svg{width:18px;height:18px}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:60;transition:background .4s,border-color .4s,transform .4s;border-bottom:1px solid transparent}
+header.solid{background:rgba(7,7,11,.72);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-color:var(--line)}
+header.hide{transform:translateY(-100%)}
+.bar{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;font:800 21px/1 var(--fd);letter-spacing:-.02em}
+.logo svg{width:34px;height:34px}.logo svg .s{transform-origin:50% 50%;animation:spin 14s linear infinite}
+nav{display:flex;gap:6px;padding:6px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.03)}
+nav a{padding:9px 16px;border-radius:999px;font-size:14px;font-weight:500;color:var(--muted);transition:color .25s,background .25s}nav a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ink);cursor:pointer}
+@media (max-width:980px){nav{display:none}.burger{display:grid;place-items:center}.bar .btn{display:none}}
+.mnav{position:fixed;inset:0;z-index:70;background:var(--bg);display:flex;flex-direction:column;justify-content:center;padding:40px 28px;gap:6px;transform:translateY(-100%);transition:transform .6s cubic-bezier(.7,0,.2,1)}
+.mnav{visibility:hidden;transition:transform .6s cubic-bezier(.7,0,.2,1),visibility 0s .6s}.mnav.open{transform:none;visibility:visible;transition:transform .6s cubic-bezier(.7,0,.2,1)}.mnav a{font:800 clamp(38px,10vw,64px)/1.1 var(--fd);letter-spacing:-.03em}.mnav a:hover{color:var(--acc)}
+.mnav .x{position:absolute;top:18px;right:20px}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:140px 0 56px;overflow:hidden;isolation:isolate}
+#bg{position:absolute;inset:0;width:100%;height:100%;z-index:-3}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(7,7,11,.5),transparent 25%,transparent 55%,rgba(7,7,11,.85) 92%,var(--bg))}
+.grain{position:absolute;inset:-50%;z-index:-1;pointer-events:none;opacity:.09;background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:grain 1s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-5%)}60%{transform:translate(-6%,1%)}80%{transform:translate(5%,4%)}100%{transform:translate(0,0)}}
+.rec{position:absolute;top:100px;right:24px;display:flex;align-items:center;gap:10px;font:500 11px var(--fm);letter-spacing:.16em;color:var(--muted)}.rec i{width:8px;height:8px;border-radius:50%;background:#ff3b3b;animation:blink 1.2s infinite}@keyframes blink{50%{opacity:.2}}
+.hero .top{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 8px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);backdrop-filter:blur(10px);font-size:13px;color:var(--muted)}
+.pill b{background:var(--acc);color:#000;font:700 11px/1 var(--fm);padding:6px 9px;border-radius:999px;letter-spacing:.06em}
+.hero h1{font-size:clamp(40px,7.6vw,132px);max-width:13ch;min-width:0}
+.hero h1 .rot{display:inline-block;min-width:4.6ch;position:relative;color:var(--acc);font-style:normal}
+.hero h1 .rot span{display:inline-block}
+.hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-top:38px;flex-wrap:wrap}
+.hero .lead{max-width:30em;color:#C9C8D2;font-size:clamp(16px,1.3vw,19px);margin:0}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+.scroll{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:24px;height:38px;border:1.5px solid var(--line);border-radius:14px}.scroll::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;border-radius:2px;background:var(--acc);transform:translateX(-50%);animation:sc 1.6s infinite}@keyframes sc{to{transform:translate(-50%,14px);opacity:0}}
+@media (max-width:640px){.scroll,.rec{display:none}.hero{padding-bottom:40px}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}
+.stat{padding:38px 24px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}
+.stat b{display:block;font:800 clamp(44px,5vw,76px)/1 var(--fd);letter-spacing:-.04em}.stat b em{font-style:normal;color:var(--acc)}
+.stat>span{display:block;margin-top:10px;color:var(--muted);font-size:14px}
+@media (max-width:820px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+/* sections */
+section{padding:140px 0;position:relative}
+.sh{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:70px}
+.sh h2{font-size:clamp(38px,5.2vw,88px);min-width:0}.sh p{color:var(--muted);max-width:30em;margin:0 0 6px auto;font-size:18px}
+.sh .mono{display:block;margin-bottom:22px}
+@media (max-width:860px){.sh{grid-template-columns:1fr}.sh p{margin:0}}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:28px;overflow:hidden}
+.sv{position:relative;background:var(--bg);padding:34px 28px 30px;min-height:330px;display:flex;flex-direction:column;overflow:hidden;transition:background .4s}
+.sv::before{content:"";position:absolute;width:340px;height:340px;left:var(--mx,50%);top:var(--my,50%);transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(198,255,77,.16),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+.sv:hover::before{opacity:1}.sv:hover{background:#0B0B11}
+.sv .n{font:500 12px var(--fm);color:var(--muted);letter-spacing:.1em}
+.sv .ic{width:54px;height:54px;margin:34px 0 auto;color:var(--acc);transition:transform .5s}.sv:hover .ic{transform:rotate(-8deg) scale(1.08)}
+.sv h3{font-size:25px;margin:30px 0 10px;letter-spacing:-.02em;line-height:1.05}
+.sv p{margin:0;color:var(--muted);font-size:15px}
+.sv .arr{position:absolute;top:28px;right:26px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background .3s,color .3s,transform .4s}.sv:hover .arr{background:var(--acc);color:#000;transform:rotate(-45deg)}
+@media (max-width:1060px){.svc{grid-template-columns:1fr 1fr}}@media (max-width:600px){.svc{grid-template-columns:1fr}.sv{min-height:0}}
+/* marquee */
+.mq{padding:46px 0;border-block:1px solid var(--line);overflow:hidden;background:var(--bg)}
+.mq .tr{display:flex;width:max-content;animation:mq 40s linear infinite}.mq.rev .tr{animation-direction:reverse;animation-duration:50s}
+.mq span{display:flex;align-items:center;gap:40px;padding-right:40px;font:800 clamp(40px,6vw,92px)/1 var(--fd);letter-spacing:-.04em;white-space:nowrap}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1.5px rgba(243,242,238,.5)}
+.mq span::after{content:"";width:.5em;height:.5em;background:var(--acc);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* work */
+.work{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.wk{position:relative;border-radius:24px;overflow:hidden;background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+.wk.big{grid-column:span 7}.wk.sm{grid-column:span 5}.wk.half{grid-column:span 6}.wk.third{grid-column:span 4}
+.wk .scr{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0c0c12}
+.wk .scr .live{position:absolute;inset:0}.wk .scr iframe{border:0;transform-origin:0 0;pointer-events:none}
+.wk .scr::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(7,7,11,.7));pointer-events:none}
+.wk .meta{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px 22px}
+.wk h3{font-size:22px;letter-spacing:-.02em}.wk small{color:var(--muted);font-size:13px}
+.wk .go{flex:none;width:44px;height:44px;border-radius:50%;background:var(--acc);color:#000;display:grid;place-items:center;transition:transform .4s}.wk:hover .go{transform:rotate(-45deg)}
+.wk .tag{position:absolute;top:16px;left:16px;z-index:2;font:500 11px var(--fm);letter-spacing:.12em;text-transform:uppercase;padding:8px 12px;border-radius:999px;background:rgba(7,7,11,.75);backdrop-filter:blur(8px);border:1px solid var(--line)}
+@media (max-width:900px){.wk.big,.wk.sm,.wk.half,.wk.third{grid-column:span 12}}
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:p}
+.pc{padding:34px 28px;border-radius:24px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.035),transparent);position:relative;overflow:hidden}
+.pc::before{counter-increment:p;content:"0" counter(p);display:block;font:800 88px/1 var(--fd);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px rgba(198,255,77,.6);margin-bottom:40px}
+.pc h3{font-size:24px;margin-bottom:10px;letter-spacing:-.02em}.pc p{margin:0;color:var(--muted);font-size:15px}
+.pc .bar2{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--acc);transform-origin:left;transform:scaleX(0)}
+@media (max-width:980px){.proc{grid-template-columns:1fr 1fr}}@media (max-width:560px){.proc{grid-template-columns:1fr}}
+/* pricing */
+.price{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.pr{padding:36px 30px;border-radius:28px;border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;position:relative}
+.pr.hot{background:var(--acc);color:#0A0A0A;border-color:var(--acc)}.pr.hot .muted,.pr.hot li::before{color:#2a3a00}.pr.hot li{border-color:rgba(0,0,0,.14)}
+.pr .badge{position:absolute;top:22px;right:22px;font:600 11px var(--fm);letter-spacing:.1em;text-transform:uppercase;padding:7px 11px;border-radius:999px;background:#0A0A0A;color:var(--acc)}
+.pr h3{font-size:28px;letter-spacing:-.02em}.pr .muted{color:var(--muted);font-size:15px;margin:8px 0 26px}
+.pr .amt{font:800 clamp(46px,4.6vw,66px)/1 var(--fd);letter-spacing:-.04em}.pr .amt small{font:500 15px var(--fb);letter-spacing:0;margin-left:6px}
+.pr ul{list-style:none;padding:0;margin:28px 0 30px;display:grid;gap:0}
+.pr li{padding:12px 0;border-top:1px solid var(--line);font-size:15px;display:flex;gap:12px}.pr li::before{content:"✦";color:var(--acc)}
+.pr .btn{margin-top:auto;justify-content:center}.pr.hot .btn{background:#0A0A0A;color:var(--acc);border-color:#0A0A0A}
+@media (max-width:980px){.price{grid-template-columns:1fr}}
+/* faq */
+.faqg{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;cursor:pointer;font:700 clamp(19px,1.8vw,24px)/1.25 var(--fd);letter-spacing:-.01em}
+.qa .pm{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .35s,background .35s,color .35s}
+.qa.open .pm{transform:rotate(45deg);background:var(--acc);color:#000;border-color:var(--acc)}
+.ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s}.qa.open .ans{grid-template-rows:1fr}.ans>div{overflow:hidden}.ans p{margin:0 0 26px;color:var(--muted)}
+@media (max-width:900px){.faqg{grid-template-columns:1fr;gap:20px}}
+/* cta + contact */
+.cta{position:relative;overflow:hidden;border-radius:36px;padding:clamp(40px,7vw,100px);background:radial-gradient(80% 120% at 100% 0%,rgba(123,92,255,.55),transparent 60%),radial-gradient(70% 100% at 0% 100%,rgba(198,255,77,.35),transparent 60%),#0E0E15;border:1px solid var(--line)}
+.cta h2{font-size:clamp(38px,5.6vw,96px);max-width:12ch}
+.cta .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:end}
+.cform{display:grid;gap:12px;background:rgba(7,7,11,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:24px;padding:26px}
+.cform label{display:grid;gap:6px;font:500 11px var(--fm);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cform input,.cform select,.cform textarea{font:500 16px var(--fb);color:var(--ink);background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:14px;padding:14px;width:100%;letter-spacing:0;text-transform:none}
+.cform select option{color:#111}.cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--acc)}
+.cform .r2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.err{color:#ff6b81;font-size:14px;min-height:1.1em;margin:0}
+.cform .btn{justify-content:center}
+@media (max-width:980px){.cta .grid{grid-template-columns:1fr}}@media (max-width:480px){.cform .r2{grid-template-columns:1fr}}
+.contacts{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+footer{padding:80px 0 40px}
+.fbig{font:800 clamp(64px,17vw,290px)/.8 var(--fd);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px rgba(243,242,238,.18);white-space:nowrap;margin:40px 0 30px;overflow:hidden}
+.fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:26px}
+.wa{position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:55;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 34px rgba(37,211,102,.4);transition:transform .3s}.wa:hover{transform:scale(1.08)}
+.cursor{position:fixed;top:0;left:0;width:38px;height:38px;border-radius:50%;border:1px solid var(--acc);pointer-events:none;z-index:90;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;mix-blend-mode:difference}
+.cursor.big{width:80px;height:80px;background:var(--acc)}
+@media (hover:none),(max-width:900px){.cursor{display:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.motion .rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"></div>
+<header id="hdr"><div class="wrap bar">
+  <a class="logo" href="#top" aria-label="Zellij Lab, accueil"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#C6FF4D"/><g class="s"><path d="M20 6l4 9 9-2-5 8 5 8-9-2-4 9-4-9-9 2 5-8-5-8 9 2z" fill="#07070B"/></g></svg>Zellij Lab</a>
+  <nav aria-label="Navigation principale"><a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#methode">Méthode</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a></nav>
+  <a class="btn btn-a" href="#contact">Démarrer un projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <button class="burger" id="burger" aria-label="Ouvrir le menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16M4 16h16"/></svg></button>
+</div></header>
+<div class="mnav" id="mnav" aria-hidden="true"><button class="burger x" id="close" aria-label="Fermer le menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#methode">Méthode</a><a href="#tarifs">Tarifs</a><a href="#contact">Contact</a></div>
+
+<main id="top">
+<section class="hero" aria-label="Présentation">
+  <canvas id="bg" aria-hidden="true"></canvas><div class="grain" aria-hidden="true"></div>
+  <div class="rec" aria-hidden="true"><i></i>LIVE · CASABLANCA</div>
+  <div class="wrap">
+    <div class="top hero-in"><span class="pill"><b>NOUVEAU</b>Site en ligne en 48h, prêt à vendre</span></div>
+    <h1 id="h1">On fait <span class="rot" id="rot"><span>grandir</span></span> les marques marocaines.</h1>
+    <div class="row">
+      <p class="lead hero-in">Sites web, réseaux sociaux, publicité, référencement Google et identité visuelle : Zellij Lab est l’agence digitale qui transforme vos visiteurs en clients, partout au Maroc.</p>
+      <div class="ctas hero-in"><a class="btn btn-a" href="#contact">Parler de mon projet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn-g" href="#realisations">Voir nos réalisations</a></div>
+    </div>
+  </div>
+  <div class="scroll" aria-hidden="true"></div>
+</section>
+
+<div class="stats">
+  <div class="stat rv"><b><span class="cnt" data-to="70">0</span><em>+</em></b><span>sites conçus pour des entreprises marocaines</span></div>
+  <div class="stat rv"><b><span class="cnt" data-to="48">0</span><em>h</em></b><span>pour mettre votre site en ligne</span></div>
+  <div class="stat rv"><b><span class="cnt" data-to="12">0</span><em>+</em></b><span>secteurs : beauté, santé, mariage, auto…</span></div>
+  <div class="stat rv"><b><span class="cnt" data-to="7">0</span><em>/7</em></b><span>suivi et support sur WhatsApp</span></div>
+</div>
+
+<section id="services"><div class="wrap">
+  <div class="sh"><div><span class="mono">(01) — Services</span><h2 class="split">Tout votre digital. Un seul partenaire.</h2></div><p class="rv">De la première impression à la première vente : on conçoit, on lance et on fait grandir votre présence en ligne, avec des résultats mesurables.</p></div>
+  <div class="svc" id="svc"></div>
+</div></section>
+
+<div class="mq" aria-hidden="true"><div class="tr" id="mq1"></div></div>
+<div class="mq rev" aria-hidden="true" style="border-top:0"><div class="tr" id="mq2"></div></div>
+
+<section id="realisations"><div class="wrap">
+  <div class="sh"><div><span class="mono">(02) — Réalisations</span><h2 class="split">Des sites qui travaillent pour vous.</h2></div><p class="rv">Quelques sites conçus pour des entreprises marocaines. Ce sont de vraies pages en ligne : ouvrez-les sur votre téléphone.</p></div>
+  <div class="work" id="work"></div>
+</div></section>
+
+<section id="methode" style="padding-top:40px"><div class="wrap">
+  <div class="sh"><div><span class="mono">(03) — Méthode</span><h2 class="split">Simple, rapide, transparent.</h2></div><p class="rv">Pas de jargon, pas de délais à rallonge. Vous savez à chaque étape ce qu’on fait et combien ça coûte.</p></div>
+  <div class="proc">
+    <div class="pc rv"><h3>Appel découverte</h3><p>15 minutes sur WhatsApp pour comprendre votre activité, vos clients et vos objectifs.</p><span class="bar2"></span></div>
+    <div class="pc rv"><h3>Proposition & devis</h3><p>Une maquette claire et un prix fixe. Vous validez avant qu’on commence.</p><span class="bar2"></span></div>
+    <div class="pc rv"><h3>Création</h3><p>Design, textes, photos, réservation WhatsApp : votre site est en ligne en 48h.</p><span class="bar2"></span></div>
+    <div class="pc rv"><h3>Croissance</h3><p>Google, réseaux sociaux, publicité : on fait venir les clients et on mesure les résultats.</p><span class="bar2"></span></div>
+  </div>
+</div></section>
+
+<section id="tarifs"><div class="wrap">
+  <div class="sh"><div><span class="mono">(04) — Tarifs</span><h2 class="split">Des prix clairs, en dirhams.</h2></div><p class="rv">Paiement unique pour le site, nom de domaine et hébergement de la première année inclus. Les services mensuels sont sans engagement.</p></div>
+  <div class="price">
+    <div class="pr rv"><h3>Site Vitrine</h3><p class="muted">Pour être trouvé et contacté facilement.</p><div class="amt">1 500<small>DH</small></div>
+      <ul><li>Site sur mesure, mobile & animé</li><li>Nom de domaine .ma + hébergement 1 an</li><li>Bouton WhatsApp & formulaire</li><li>Fiche Google Maps optimisée</li><li>Mise en ligne en 48h</li></ul><a class="btn btn-g" href="#contact" data-pack="Site Vitrine">Choisir ce pack</a></div>
+    <div class="pr hot rv"><span class="badge">Le plus choisi</span><h3>Site + Réservations</h3><p class="muted">Pour recevoir des demandes chaque jour.</p><div class="amt">2 900<small>DH</small></div>
+      <ul><li>Tout le pack Vitrine</li><li>Catalogue, menu ou liste de services</li><li>Réservation / devis direct sur WhatsApp</li><li>Avis Google mis en avant</li><li>SEO local : Google Maps & recherche</li></ul><a class="btn" href="#contact" data-pack="Site + Réservations">Choisir ce pack</a></div>
+    <div class="pr rv"><h3>Croissance</h3><p class="muted">Pour faire venir les clients chaque mois.</p><div class="amt"><small style="margin:0 6px 0 0">dès</small>2 500<small>DH/mois</small></div>
+      <ul><li>Gestion Instagram & Facebook</li><li>Création de contenus (posts, reels)</li><li>Publicités Meta & Google Ads</li><li>Rapport de résultats mensuel</li><li>Sans engagement</li></ul><a class="btn btn-g" href="#contact" data-pack="Croissance">Choisir ce pack</a></div>
+  </div>
+</div></section>
+
+<section id="faq" style="padding-top:20px"><div class="wrap faqg">
+  <div><span class="mono">(05) — FAQ</span><h2 class="split" style="font-size:clamp(42px,5vw,80px);margin-top:22px">Vos questions.</h2></div>
+  <div id="faql"></div>
+</div></section>
+
+<section id="contact" style="padding-top:40px"><div class="wrap">
+  <div class="cta"><div class="grid">
+    <div><span class="mono" style="color:#cfcfda">(06) — Contact</span><h2 class="split" style="margin-top:22px">Prêt à passer au niveau supérieur ?</h2>
+      <div class="contacts rv"><a class="btn btn-g" href="https://wa.me/212663601520" target="_blank" rel="noopener">WhatsApp · +212 663 601 520</a><a class="btn btn-g" href="mailto:radwanad121@gmail.com">radwanad121@gmail.com</a></div></div>
+    <form class="cform rv" id="f" novalidate>
+      <div class="r2"><label>Nom<input id="fn" autocomplete="name" placeholder="Votre nom"></label><label>Téléphone<input id="fp" type="tel" autocomplete="tel" placeholder="06 00 00 00 00"></label></div>
+      <div class="r2"><label>Entreprise<input id="fe" autocomplete="organization" placeholder="Nom & ville"></label><label>Besoin<select id="fs"><option>Site Vitrine</option><option>Site + Réservations</option><option>Croissance (réseaux & pub)</option><option>Boutique en ligne</option><option>Branding / logo</option><option>Autre</option></select></label></div>
+      <label>Votre projet (optionnel)<textarea id="fm" rows="3" placeholder="Activité, objectif, délai…"></textarea></label>
+      <p class="err" id="err" role="alert"></p>
+      <button class="btn btn-a" type="submit">Envoyer sur WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </form>
+  </div></div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fbig" aria-hidden="true">Zellij Lab</div>
+  <div class="fbot"><span>© <span id="yr"></span> Zellij Lab · Agence digitale au Maroc</span><span>Casablanca · Rabat · Marrakech · Partout au Maroc</span></div>
+</div></footer>
+<a class="wa" href="https://wa.me/212663601520" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.5-.3Z"/></svg></a>
+
+<script>
+(function(){
+const root=document.documentElement, reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce) root.classList.add('motion');
+const WA='212663601520';
+document.getElementById('yr').textContent=new Date().getFullYear();
+/* ---------- services ---------- */
+const I=p=>`<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const S=[
+ ['Création de sites web','Sites vitrines rapides, animés et pensés pour le mobile, qui inspirent confiance dès la première seconde.',I('<rect x="5" y="9" width="38" height="28" rx="4"/><path d="M5 16h38M16 43h16M24 37v6"/><circle cx="10" cy="12.5" r=".8"/>')],
+ ['E-commerce','Boutiques en ligne avec catalogue, paiement à la livraison et commandes reçues sur WhatsApp.',I('<path d="M7 9h5l4 22h22l4-15H14"/><circle cx="19" cy="38" r="3"/><circle cx="34" cy="38" r="3"/>')],
+ ['Réseaux sociaux','Community management Instagram, Facebook et TikTok : calendrier, contenus, réponses aux clients.',I('<rect x="8" y="8" width="32" height="32" rx="10"/><circle cx="24" cy="24" r="7"/><circle cx="34" cy="14" r="1.4"/>')],
+ ['Publicité Meta & Google','Campagnes ciblées par ville et par intérêt, budget maîtrisé et résultats suivis chaque semaine.',I('<path d="M8 30V18l22-9v30L8 30z"/><path d="M30 17a7 7 0 0 1 0 14M14 30l3 10h6l-3-9"/>')],
+ ['SEO & Google Maps','Apparaître en premier quand on vous cherche : référencement local, fiche Google et avis clients.',I('<circle cx="21" cy="21" r="12"/><path d="M30 30l10 10M15 21h12M21 15v12"/>')],
+ ['Branding & logo','Une identité qui se retient : logo, couleurs, typographies et supports prêts à imprimer.',I('<path d="M24 5l5 12 13 1-10 8 3 13-11-7-11 7 3-13-10-8 13-1z"/>')],
+ ['Photo & vidéo','Shootings produits, reels et vidéos de présentation qui donnent envie d’acheter.',I('<rect x="5" y="13" width="28" height="22" rx="4"/><path d="M33 21l10-6v18l-10-6z"/>')],
+ ['Automatisation','Réponses WhatsApp, prise de rendez-vous et relances automatiques pour gagner des heures chaque semaine.',I('<circle cx="24" cy="24" r="6"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4"/>')]
+];
+const arr='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M8 7h9v9"/></svg>';
+document.getElementById('svc').innerHTML=S.map((s,i)=>`<a class="sv rv" href="#contact"><span class="n">0${i+1}</span><span class="arr">${arr}</span><div class="ic">${s[2]}</div><h3>${s[0]}</h3><p>${s[1]}</p></a>`).join('');
+document.querySelectorAll('.sv').forEach(c=>c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')}));
+const M1=['Sites web','Réseaux sociaux','Publicité','SEO local','Branding','E-commerce'],M2=['Casablanca','Rabat','Marrakech','Tanger','Agadir','Fès'];
+document.getElementById('mq1').innerHTML=[...M1,...M1].map(t=>`<span>${t}</span>`).join('');
+document.getElementById('mq2').innerHTML=[...M2,...M2].map(t=>`<span>${t}</span>`).join('');
+/* ---------- work (live previews) ---------- */
+const B='https://radwanad121-wq.github.io/';
+const W=[['big','Negafa Casablanca Bayan','Mariage · Casablanca',B+'mariages/negafa-bayan.html'],['sm','Genau Rent Car','Location de voiture · Rabat',B+'location-voiture/genau-car-rabat.html'],
+ ['sm','Pelo Beauty','Salon de beauté · Casablanca',B+'salons/pelo-beauty.html'],['big','The M Room','Barbershop · Casablanca',B+'barbershops/the-m-room-barber.html'],
+ ['third','Centre dentaire Zardkhane','Santé · Casablanca',B+'sante/centre-dentaire-zardkhane.html'],['third','Candy Shoppe Events','Traiteur · Casablanca',B+'mariages/candy-shoppe-events.html'],['third','Fexis Car','Location de voiture · Tétouan',B+'location-voiture/fexis-car.html']];
+const go='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M8 7h9v9"/></svg>';
+document.getElementById('work').innerHTML=W.map(w=>`<a class="wk ${w[0]} rv" href="${w[3]}" target="_blank" rel="noopener"><span class="tag">${w[2].split(' · ')[0]}</span><div class="scr"><div class="live" data-src="${w[3]}"></div></div><div class="meta"><div><h3>${w[1]}</h3><small>${w[2]}</small></div><span class="go">${go}</span></div></a>`).join('');
+const mount=el=>{if(el.dataset.on)return;el.dataset.on=1;const f=document.createElement('iframe');f.src=el.dataset.src;f.loading='lazy';f.title='Aperçu';f.tabIndex=-1;f.setAttribute('aria-hidden','true');f.style.width='1440px';f.style.height='900px';el.appendChild(f);const fit=()=>{f.style.transform=`scale(${el.clientWidth/1440})`};fit();new ResizeObserver(fit).observe(el)};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){mount(e.target);io.unobserve(e.target)}}),{rootMargin:'300px'});
+document.querySelectorAll('.live').forEach(l=>io.observe(l));
+/* ---------- faq ---------- */
+const F=[['Combien coûte un site web ?','Le Site Vitrine est à 1 500 DH, paiement unique, avec nom de domaine .ma et hébergement de la première année inclus. Ensuite, le renouvellement est d’environ 300 DH par an.'],
+ ['En combien de temps mon site est-il prêt ?','En général 48h après réception de vos informations (logo, photos, services). Pour une boutique en ligne, comptez quelques jours de plus.'],
+ ['Je n’ai pas de logo ni de photos, c’est un problème ?','Non. On peut créer votre logo, sélectionner des visuels et organiser un shooting photo ou vidéo selon votre budget.'],
+ ['Est-ce que je peux modifier mon site après ?','Oui. Les petites modifications (prix, horaires, photos) sont faites rapidement sur simple message WhatsApp.'],
+ ['Travaillez-vous en dehors de Casablanca ?','Oui, partout au Maroc et avec les Marocains du monde. Tout se fait à distance, par WhatsApp et appel vidéo.']];
+document.getElementById('faql').innerHTML=F.map(f=>`<div class="qa rv"><button type="button" aria-expanded="false"><span>${f[0]}</span><span class="pm" aria-hidden="true">+</span></button><div class="ans"><div><p>${f[1]}</p></div></div></div>`).join('');
+document.querySelectorAll('.qa').forEach(q=>{const b=q.querySelector('button');b.addEventListener('click',()=>{const o=!q.classList.contains('open');q.classList.toggle('open',o);b.setAttribute('aria-expanded',o)})});
+/* ---------- nav, form ---------- */
+const hdr=document.getElementById('hdr');let ly=0;addEventListener('scroll',()=>{const y=scrollY;hdr.classList.toggle('solid',y>40);hdr.classList.toggle('hide',y>ly&&y>500);ly=y},{passive:true});
+const mn=document.getElementById('mnav');document.getElementById('burger').onclick=()=>{mn.classList.add('open');mn.setAttribute('aria-hidden','false')};
+const cl=()=>{mn.classList.remove('open');mn.setAttribute('aria-hidden','true')};document.getElementById('close').onclick=cl;mn.querySelectorAll('a').forEach(a=>a.onclick=cl);
+document.querySelectorAll('[data-pack]').forEach(a=>a.addEventListener('click',()=>{const s=document.getElementById('fs');[...s.options].forEach(o=>{if(o.text.startsWith(a.dataset.pack))s.value=o.text})}));
+document.getElementById('f').addEventListener('submit',e=>{e.preventDefault();const $=id=>document.getElementById(id).value.trim();const n=$('fn'),p=$('fp');
+ if(!n||p.replace(/\D/g,'').length<9){document.getElementById('err').textContent='Ajoutez votre nom et un numéro valide.';return}
+ document.getElementById('err').textContent='';const t=`Bonjour Zellij Lab, je souhaite démarrer un projet.\nNom : ${n}\nTéléphone : ${p}${$('fe')?'\nEntreprise : '+$('fe'):''}\nBesoin : ${$('fs')}${$('fm')?'\nProjet : '+$('fm'):''}`;
+ window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(t),'_blank','noopener')});
+/* ---------- cursor ---------- */
+const cur=document.querySelector('.cursor');if(matchMedia('(hover:hover)').matches){addEventListener('pointermove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'},{passive:true});document.querySelectorAll('a,button').forEach(a=>{a.addEventListener('pointerenter',()=>cur.classList.add('big'));a.addEventListener('pointerleave',()=>cur.classList.remove('big'))})}
+/* ---------- animated background (the "video") ---------- */
+const cv=document.getElementById('bg'),cx=cv.getContext('2d');let Wd,Ht,dpr,t0=performance.now(),mx=.5,my=.5;
+const size=()=>{dpr=Math.min(devicePixelRatio||1,1.6);Wd=cv.clientWidth;Ht=cv.clientHeight;cv.width=Wd*dpr;cv.height=Ht*dpr;cx.setTransform(dpr,0,0,dpr,0,0)};size();addEventListener('resize',size);
+addEventListener('pointermove',e=>{mx=e.clientX/innerWidth;my=e.clientY/innerHeight},{passive:true});
+const star=(x,y,r,rot)=>{cx.beginPath();for(let i=0;i<16;i++){const a=rot+Math.PI/8*i,rr=i%2?r*.62:r;cx.lineTo(x+rr*Math.cos(a),y+rr*Math.sin(a))}cx.closePath()};
+const blobs=[[198,255,77],[123,92,255],[255,92,138],[60,140,255]];
+const P=Array.from({length:70},()=>({x:Math.random(),y:Math.random(),z:.3+Math.random()*.7,s:Math.random()*6.28}));
+let vis=true;new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cv);
+function frame(now){requestAnimationFrame(frame);if(!vis)return;const t=(now-t0)/1000;
+ cx.globalCompositeOperation='source-over';cx.fillStyle='#07070B';cx.fillRect(0,0,Wd,Ht);
+ cx.globalCompositeOperation='lighter';
+ blobs.forEach((c,i)=>{const bx=Wd*(.5+.34*Math.sin(t*.13*(i+1)+i*1.7)+(mx-.5)*.12*(i%2?1:-1)),by=Ht*(.45+.3*Math.cos(t*.11*(i+1.3)+i)+(my-.5)*.1),r=Math.max(Wd,Ht)*(.32+.06*Math.sin(t*.4+i));
+  const g=cx.createRadialGradient(bx,by,0,bx,by,r);g.addColorStop(0,`rgba(${c},.55)`);g.addColorStop(1,'rgba(0,0,0,0)');cx.fillStyle=g;cx.fillRect(0,0,Wd,Ht)});
+ cx.globalCompositeOperation='source-over';
+ // zellige lattice, perspective-ish drift
+ const step=Math.max(90,Wd/12),off=(t*14)%step;cx.lineWidth=1;
+ for(let y=-step;y<Ht+step;y+=step)for(let x=-step;x<Wd+step;x+=step){const px=x+off,py=y+off*.5,d=Math.hypot(px-Wd*mx,py-Ht*my),k=Math.max(0,1-d/(Math.max(Wd,Ht)*.55));
+  const pulse=.5+.5*Math.sin(t*1.2+(x+y)*.01);star(px,py,step*(.18+.14*k),t*.15+(x*y)*1e-5);cx.strokeStyle=`rgba(243,242,238,${.07+.3*k*pulse})`;cx.stroke();
+  if(k>.6&&pulse>.85){cx.fillStyle=`rgba(198,255,77,${(k-.6)*.5})`;cx.fill()}}
+ // light streaks
+ for(let i=0;i<5;i++){const sx=((t*(60+i*25)+i*400)%(Wd+600))-300,sy=Ht*(.2+i*.15);const g=cx.createLinearGradient(sx-260,sy,sx,sy);g.addColorStop(0,'rgba(198,255,77,0)');g.addColorStop(1,i%2?'rgba(123,92,255,.55)':'rgba(198,255,77,.5)');cx.strokeStyle=g;cx.lineWidth=1.4;cx.beginPath();cx.moveTo(sx-260,sy);cx.lineTo(sx,sy);cx.stroke()}
+ // particles
+ P.forEach(p=>{p.y-=.0006*p.z;if(p.y<-.02){p.y=1.02;p.x=Math.random()}const x=p.x*Wd+Math.sin(t+p.s)*14,y=p.y*Ht;cx.fillStyle=`rgba(243,242,238,${.25*p.z})`;cx.beginPath();cx.arc(x,y,1.3*p.z,0,6.28);cx.fill()});
+}
+if(!reduce) requestAnimationFrame(frame); else {cx.fillStyle='#07070B';cx.fillRect(0,0,Wd,Ht);frame(performance.now());}
+const fit=()=>document.querySelectorAll('h1,h2').forEach(h=>{h.style.fontSize='';for(let i=0;i<14&&h.scrollWidth>h.clientWidth+1;i++)h.style.fontSize=(parseFloat(getComputedStyle(h).fontSize)*.93)+'px'});fit();document.fonts&&document.fonts.ready.then(fit);addEventListener('resize',fit);
+/* ---------- rotating word ---------- */
+const words=['grandir','vendre','briller','décoller'];let wi=0;const rot=document.getElementById('rot');
+/* ---------- GSAP ---------- */
+const unhide=()=>{root.classList.remove('motion');document.querySelectorAll('.cnt').forEach(c=>c.textContent=c.dataset.to)};if(reduce)return unhide();
+const safety=setTimeout(unhide,4000);
+const load=s=>new Promise((ok,ko)=>{const e=document.createElement('script');e.src=s;e.onload=ok;e.onerror=ko;document.head.appendChild(e)});
+load('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js').then(()=>load('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js')).then(run).catch(unhide);
+function split(el){const walk=n=>[...n.childNodes].map(c=>c.nodeType===3?c.textContent.split(/(\s+)/).map(t=>t.trim()?`<span class="w"><span>${t}</span></span>`:t).join(''):c.outerHTML).join('');el.innerHTML=walk(el);return el.querySelectorAll('.w>span')}
+function run(){clearTimeout(safety);gsap.registerPlugin(ScrollTrigger);
+ const h=document.getElementById('h1');const ws=split(h);
+ gsap.timeline({defaults:{ease:'expo.out'}}).from(ws,{yPercent:120,duration:1.4,stagger:.07,delay:.15}).from(rot,{yPercent:120,opacity:0,duration:1.2},'-=1.2').from('.hero-in',{opacity:0,y:30,duration:1.1,stagger:.12},'-=1');
+ setInterval(()=>{wi=(wi+1)%words.length;const s=rot.firstElementChild;gsap.to(s,{yPercent:-110,opacity:0,duration:.45,ease:'power3.in',onComplete:()=>{s.textContent=words[wi];gsap.fromTo(s,{yPercent:110,opacity:0},{yPercent:0,opacity:1,duration:.7,ease:'expo.out'})}})},2600);
+ gsap.to('.hero .wrap',{yPercent:-18,opacity:.2,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+ document.querySelectorAll('section:not(.hero) .split').forEach(el=>gsap.from(split(el),{yPercent:120,duration:1.1,ease:'expo.out',stagger:.05,scrollTrigger:{trigger:el,start:'top 88%'}}));
+ ScrollTrigger.batch('.rv',{start:'top 92%',onEnter:els=>gsap.to(els,{opacity:1,y:0,duration:1,ease:'power3.out',stagger:.08})});
+ document.querySelectorAll('.cnt').forEach(c=>{const o={v:0};gsap.to(o,{v:+c.dataset.to,duration:2,ease:'power2.out',scrollTrigger:{trigger:c,start:'top 92%'},onUpdate:()=>c.textContent=Math.round(o.v)})});
+ gsap.to('.pc .bar2',{scaleX:1,duration:1.2,ease:'power2.inOut',stagger:.25,scrollTrigger:{trigger:'.proc',start:'top 75%'}});
+ gsap.to('.mq .tr',{x:'+=0'});
+ gsap.fromTo('.fbig',{xPercent:8},{xPercent:-8,ease:'none',scrollTrigger:{trigger:'footer',start:'top bottom',end:'bottom bottom',scrub:true}});
+ fit();addEventListener('load',()=>{fit();ScrollTrigger.refresh()});
+}
+})();
+</script>
+</body>
+</html>
